@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 ENV LANG C.UTF-8
-#jdk8
+
 RUN apt-get -q update && \
     apt-get -y --no-install-recommends install net-tools curl python-glade2 wget vim mysql-client && \
     rm -rf /var/lib/apt/lists/*
