@@ -9,8 +9,10 @@ RUN apt-get -q update && \
 
 WORKDIR /opt
 
-#COPY ./xampp-linux-x64-1.8.3-5-installer.run /opt/xampp-linux-x64-1.8.3-5-installer.run
-RUN wget https://udomain.dl.sourceforge.net/project/xampp/XAMPP%20Linux/1.8.3/xampp-linux-x64-1.8.3-5-installer.run
+COPY ./xampp-linux-x64-1.8.3-5-installer.run /opt/xampp-linux-x64-1.8.3-5-installer.run
+#RUN wget https://udomain.dl.sourceforge.net/project/xampp/XAMPP%20Linux/1.8.3/xampp-linux-x64-1.8.3-5-installer.run --no-check-certificate
+
+RUN chmod +x ./xampp-linux-x64-1.8.3-5-installer.run
 
 RUN ./xampp-linux-x64-1.8.3-5-installer.run --mode unattended
 
